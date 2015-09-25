@@ -5,12 +5,12 @@
     tasks:
       - name: Update APT cache
         apt: update_cache=yes
-        when: ansible_distribution == 'Ubuntu'
+        when: ansible_os_family == 'Debian'
 
       - name: Install Apache2 (apt version)
         apt: pkg=apache2 state=latest
-        when: ansible_distribution == 'Ubuntu'
+        when: ansible_os_family == 'Debian'
 
       - name: Install Apache2 web server (yum version)
         yum: name=httpd24 state=latest
-        when: ansible_distribution == 'Amazon'
+        when: ansible_os_family == 'RedHat'
