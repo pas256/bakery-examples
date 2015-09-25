@@ -14,3 +14,7 @@
       - name: Install Apache2 web server (yum version)
         yum: name=httpd24 state=latest
         when: ansible_os_family == 'RedHat'
+
+      - name: Finished
+        debug:
+          msg: "Completed successfully!"
